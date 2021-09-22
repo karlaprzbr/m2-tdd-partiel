@@ -9,8 +9,8 @@ class Converter
             $remainder = $decimal%1000;
             for($i=0;$i<$quotient;$i++) {
                 $output .= "M";
-                return $output;
             }
+            return $output;
         }
     }
 }
