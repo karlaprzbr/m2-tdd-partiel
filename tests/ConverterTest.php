@@ -11,8 +11,9 @@ final class ConverterTest extends TestCase
         // $this->assertSame("IX", Converter::decimalToRoman(9));
         // $this->assertSame("L", Converter::decimalToRoman(50));
         // $this->assertSame("C", Converter::decimalToRoman(100));
-        // $this->assertSame("D", Converter::decimalToRoman(500));
+        $this->assertSame("D", Converter::decimalToRoman(500));
         $this->assertSame("M", Converter::decimalToRoman(1000));
         $this->assertSame("MMM", Converter::decimalToRoman(3000));
+        $this->assertSame("MD", Converter::decimalToRoman(1500));
     }
 }
