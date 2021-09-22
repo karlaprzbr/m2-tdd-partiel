@@ -24,11 +24,16 @@ class Converter
             }
         }
         if($decimal>=100) {
-            $quotient = (int)($decimal/100);
-            $decimal = $decimal%100;
-            for($i=0;$i<$quotient;$i++) {
-                $output .= "C";
-            }
+            if($decimal<400) {
+                $quotient = (int)($decimal/100);
+                $decimal = $decimal%100;
+                for($i=0;$i<$quotient;$i++) {
+                    $output .= "C";
+                }
+            } else {
+                $decimal = $decimal%100;
+                $output .= "CD";
+            }    
         }
         if($decimal>=50) {
             if($decimal<90) {
@@ -43,10 +48,15 @@ class Converter
             }
         }
         if($decimal>=10) {
-            $quotient = (int)($decimal/10);
-            $decimal = $decimal%10;
-            for($i=0;$i<$quotient;$i++) {
-                $output .= "X";
+            if($decimal<40) {
+                $quotient = (int)($decimal/10);
+                $decimal = $decimal%10;
+                for($i=0;$i<$quotient;$i++) {
+                    $output .= "X";
+                }
+            } else {
+                $decimal = $decimal%10;
+                $output .= "XL";
             }
         }
         if($decimal>=5) {
@@ -62,11 +72,16 @@ class Converter
             }    
         }
         if($decimal>=1) {
-            $quotient = (int)($decimal/1);
-            $decimal = $decimal%1;
-            for($i=0;$i<$quotient;$i++) {
-                $output .= "I";
-            }
+            if($decimal<4) {
+                $quotient = (int)($decimal/1);
+                $decimal = $decimal%1;
+                for($i=0;$i<$quotient;$i++) {
+                    $output .= "I";
+                }
+            } else {
+                $decimal = $decimal%1;
+                $output .= "IV";
+            }  
         }
         return $output;
     }
