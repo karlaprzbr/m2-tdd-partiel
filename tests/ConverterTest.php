@@ -27,4 +27,21 @@ final class ConverterTest extends TestCase
         $this->assertSame("MDCLXV", Converter::decimalToRoman(1665));
         $this->assertSame("MDCLXVI", Converter::decimalToRoman(1666));
     }
+
+    public function testRomanToDecimal(): void
+    {
+        $this->assertSame(1, Converter::romanToDecimal("I"));
+        $this->assertSame(4, Converter::romanToDecimal("IV"));
+        $this->assertSame(5, Converter::romanToDecimal("V"));
+        $this->assertSame(9, Converter::romanToDecimal("IX"));
+        $this->assertSame(10, Converter::romanToDecimal("X"));
+        $this->assertSame(40, Converter::romanToDecimal("XL"));
+        $this->assertSame(50, Converter::romanToDecimal("L"));
+        $this->assertSame(90, Converter::romanToDecimal("XC"));
+        $this->assertSame(100, Converter::romanToDecimal("C"));
+        $this->assertSame(400, Converter::romanToDecimal("CD"));
+        $this->assertSame(500, Converter::romanToDecimal("D"));
+        $this->assertSame(900, Converter::romanToDecimal("CM"));
+        $this->assertSame(1000, Converter::romanToDecimal("M"));
+    }
 }
