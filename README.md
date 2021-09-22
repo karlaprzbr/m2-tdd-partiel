@@ -1,1 +1,11 @@
-# m2-tdd-partiel
+# TDD EVALUATION
+
+## Installation
+
+Install Composer dependencies
+
+    composer install
+
+## Run the tests
+
+    ./vendor/bin/phpunit tests
