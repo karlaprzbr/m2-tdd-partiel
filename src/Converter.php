@@ -2,7 +2,8 @@
 
 class Converter
 {
-    public function decimalToRoman(int $decimal) {
+    public function decimalToRoman(int $decimal)
+    {
         $output = "";
         if($decimal>=1000) {
             $quotient = (int)($decimal/1000);
@@ -84,5 +85,13 @@ class Converter
             }  
         }
         return $output;
+    }
+
+    public function romanToDecimal(string $roman)
+    {
+        $output = 0;
+        for($i=0;$i<strlen($roman);$i++) {
+
+        }
     }
 }
